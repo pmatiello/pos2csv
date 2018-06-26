@@ -3,11 +3,7 @@ package pos2csv
 import java.io.{InputStream, OutputStream}
 
 class Application(stdin: InputStream, stdout: OutputStream) {
-  def run(): Unit = {
-    io.Source.fromInputStream(stdin).getLines().foreach { str =>
-      stdout.write(s"$str\n".getBytes)
-    }
-  }
+  def run(): Unit = new IOMap(identity).map(stdin, stdout)
 }
 
 object Application {
