@@ -4,9 +4,9 @@ import java.io.{InputStream, OutputStream}
 
 class Application
 (stdin: InputStream, stdout: OutputStream, arguments: List[String]) {
-  private val columSizes = new Arguments(arguments).columnSizes
+  private val columSizes: List[Int] = new Arguments(arguments).columnSizes
 
-  private def mapFn(line: String) =
+  private def mapFn(line: String): String =
     new ParsedRow(line, columSizes).cells.mkString(",")
 
   def run(): Unit = new IOMap(mapFn).map(stdin, stdout)
