@@ -10,3 +10,5 @@ lazy val root = (project in file(".")).
     name := "pos2csv",
     libraryDependencies += scalaTest % Test
   )
+
+enablePlugins(JavaAppPackaging)
