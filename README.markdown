@@ -2,6 +2,8 @@
 
 Command-line utility for converting positional flat files into delimited text.
 
+[![CircleCI](https://circleci.com/gh/pmatiello/pos2csv.svg?style=svg)](https://circleci.com/gh/pmatiello/pos2csv)
+
 ## Building
 
 Run this command in order to build an universal package for this utility:
