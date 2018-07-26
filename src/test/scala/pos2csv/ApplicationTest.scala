@@ -4,7 +4,7 @@ import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 
 import org.scalatest._
 
-class ApplicationSpec extends FunSpec with Matchers {
+class ApplicationTest extends FunSpec with Matchers {
   describe("Application") {
     it("copies stdin to stdout") {
       val stdin = new ByteArrayInputStream("abc001\ndef002\n".getBytes)
