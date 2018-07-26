@@ -6,8 +6,10 @@ class Application
 (stdin: InputStream, stdout: OutputStream, arguments: List[String]) {
   private val columSizes: List[Int] = new Arguments(arguments).columnSizes
 
-  private def mapFn(line: String): String =
-    new ParsedRow(line, columSizes).cells.mkString(",")
+  private def mapFn(line: String): String = {
+    val parsedRow = new ParsedRow(line, columSizes)
+    new FormattedRow(parsedRow.cells, ",").toString
+  }
 
   def run(): Unit = new IOMap(mapFn).map(stdin, stdout)
 }
